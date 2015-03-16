@@ -1,1 +1,4 @@
 test/coverage/**
+gulpfile.js
+packages/custom/mytheme/public/assets/lib/**
+packages/custom/post/public/assets/lib/**
