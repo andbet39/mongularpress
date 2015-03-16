@@ -1,0 +1,7 @@
+{
+  "name": "mytheme",
+  "version": "0.0.1",
+  "dependencies": {
+    "materialize": "~0.95.3"
+  }
+}

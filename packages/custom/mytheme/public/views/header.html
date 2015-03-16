@@ -1,0 +1,46 @@
+
+<div class="nav-wrapper" data-ng-controller="HeaderController">
+    <a class="brand-logo center" ui-sref="home" mean-token="'site-title'">MEAN</a>
+
+    <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li data-ng-repeat="item in menus.main" ui-route="/{{item.link}}" ng-class="{active: $uiRoute}">
+            <a mean-token="item.link" ui-sref='{{item.link}}'>{{item.title}}</a>
+        </li>
+    </ul>
+
+
+    <ul id="nav-mobile" class="right hide-on-med-and-down" data-ng-hide="global.authenticated">
+        <li><a ui-sref='auth.register'>Join</a>
+        </li>
+        <li><a ui-sref='auth.login'>Log In</a>
+        </li>
+    </ul>
+
+    <ul id="nav-mobile" class="right hide-on-med-and-down"  data-ng-show="global.authenticated">
+
+        <li ng-if="global.user.profile"  mean-profile-menu>x</li>
+        <li>
+            <a class="dropdown-button" href="#!" data-activates="dropdown1">
+                {{global.user.name}}<i class="mdi-navigation-arrow-drop-down right"></i>
+            </a>
+        </li>
+    </ul>
+
+
+</div>
+
+
+<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+    <li><a href="/logout">Log Out</a></li>
+</ul>
+
+<script type="text/javascript" >
+    $( document ).ready(function(){
+        $(".dropdown-button").dropdown();
+
+
+    });
+
+</script>
+
